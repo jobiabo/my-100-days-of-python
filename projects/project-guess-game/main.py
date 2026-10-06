@@ -3,11 +3,11 @@ import random
 def guess(x):
     count = 1
 
-    while count < 6:
+    while count < 10:
         cpu_random = random.randint(1, x)
         my_guess = 0
 
-        while my_guess != cpu_random and count < 5:
+        while my_guess != cpu_random and count <= 5:
             my_guess = int(input("guess a number: "))
             
             # trial 1
