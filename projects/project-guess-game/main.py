@@ -78,7 +78,9 @@ def guess(x):
                     print(f"yay you got the number {cpu_random}")
                     print("You Won!")
                 count = count+1
-                
+
+            elif not validate(my_guess) and count == 3:
+                print("You failed, after 3 invalid input trials ")  
             else:
                 print(error_Message())
                 break
