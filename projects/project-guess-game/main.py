@@ -79,11 +79,13 @@ def guess(x):
                     print("You Won!")
                 count = count+1
 
-            elif not validate(my_guess) and count == 3:
-                print("You failed, after 3 invalid input trials ")  
+            # elif not validate(my_guess) and count == 3:
+            #     print("You failed, after 3 invalid input trials ")  
+            #     break
             else:
-                print(error_Message())
-                break
+                if not validate(my_guess) and count == 3:
+                    print(error_Message())
+                    break
 
         break
 
