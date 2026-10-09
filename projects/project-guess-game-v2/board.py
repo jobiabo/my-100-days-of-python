@@ -67,7 +67,9 @@ def guess(my_guess, cpu_guess):
             print(f"You have used {count} trial: 0 trials remaining")
             print("You failed")
             print("Computer Won!")
+            print(f"Computer secret number is {cpu_guess}")
             break   
+
         # Winning threshold
         if my_guess == cpu_guess:
             print(f"yay you got the number {cpu_guess}")

@@ -7,11 +7,18 @@ from board import guess
 menupage()
 
 rangednumber = input("Please enter end range: ")
-rangedint = int(inrangenumber(rangednumber))
+rangedint = (inrangenumber(rangednumber))
 print(f"rangedint: {rangedint}")
 
+if rangedint == None:
+    print("Range input is Null")
+    exit()
+else:
+    rangedint = int(rangedint)
+    cpu_guess = random.randint(1, (rangedint))
 
-cpu_guess = random.randint(1, rangedint)
+
+
 
 maxguess = 3
 count = 1
