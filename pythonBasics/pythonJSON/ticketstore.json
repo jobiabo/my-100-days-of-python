@@ -1,14 +1,102 @@
 [
     {
-        "id": 1,
-        "name": "John",
-        "complaint": "My internet is not working",
-        "status": "open"
+        "id": "T001",
+        "title": "Campus Wi-Fi is down",
+        "category": "Network",
+        "urgency": "high",
+        "affected_users": 15,
+        "priority": "critical",
+        "status": "open",
+        "assigned_to": "none"
     },
     {
-        "id": 2,
-        "name": "Mary",
-        "complaint": "I cannot log into my account",
-        "status": "open"
+        "id": "T002",
+        "title": "Printer not responding",
+        "category": "Hardware",
+        "urgency": "medium",
+        "affected_users": 3,
+        "priority": "medium",
+        "status": "open",
+        "assigned_to": "none"
+    },
+    {
+        "id": "T003",
+        "title": "Unable to access student portal",
+        "category": "Software",
+        "urgency": "high",
+        "affected_users": 25,
+        "priority": "critical",
+        "status": "open",
+        "assigned_to": "none"
+    },
+    {
+        "id": "T004",
+        "title": "Laptop battery not charging",
+        "category": "Hardware",
+        "urgency": "low",
+        "affected_users": 1,
+        "priority": "low",
+        "status": "open",
+        "assigned_to": "none"
+    },
+    {
+        "id": "T005",
+        "title": "Email server is unavailable",
+        "category": "Network",
+        "urgency": "high",
+        "affected_users": 50,
+        "priority": "critical",
+        "status": "open",
+        "assigned_to": "none"
+    },
+    {
+        "id": "T006",
+        "title": "Forgotten password",
+        "category": "Account Access",
+        "urgency": "low",
+        "affected_users": 1,
+        "priority": "low",
+        "status": "open",
+        "assigned_to": "none"
+    },
+    {
+        "id": "T007",
+        "title": "Projector not displaying",
+        "category": "Hardware",
+        "urgency": "medium",
+        "affected_users": 30,
+        "priority": "high",
+        "status": "open",
+        "assigned_to": "none"
+    },
+    {
+        "id": "T008",
+        "title": "Slow internet connection in the library",
+        "category": "Network",
+        "urgency": "medium",
+        "affected_users": 40,
+        "priority": "high",
+        "status": "in progress",
+        "assigned_to": "IT Support"
+    },
+    {
+        "id": "T009",
+        "title": "Antivirus software needs updating",
+        "category": "Software",
+        "urgency": "low",
+        "affected_users": 10,
+        "priority": "medium",
+        "status": "open",
+        "assigned_to": "none"
+    },
+    {
+        "id": "T010",
+        "title": "Unable to connect to the campus VPN",
+        "category": "Network",
+        "urgency": "medium",
+        "affected_users": 8,
+        "priority": "medium",
+        "status": "open",
+        "assigned_to": "none"
     }
 ]
