@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "John",
+        "complaint": "My internet is not working",
+        "status": "open"
+    },
+    {
+        "id": 2,
+        "name": "Mary",
+        "complaint": "I cannot log into my account",
+        "status": "open"
+    }
+]
