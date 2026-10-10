@@ -1,0 +1,9 @@
+{
+    "name": "John",
+    "age": 20,
+    "is_student": true,
+    "subjects": [
+        "Python",
+        "Math"
+    ]
+}
