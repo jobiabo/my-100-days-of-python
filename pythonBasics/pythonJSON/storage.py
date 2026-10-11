@@ -15,4 +15,13 @@ def list_and_view():
     print("===================================")
     print("please enter specific ticket ID to view more details")        
     print("===================================")
+    viewticket = input("Enter ticket ID to view: ")
+    checkticket = (viewticket)
+
+    if checkticket == student:
+        print("Found")
+    else:
+        print("Not found")
+
+    
 
