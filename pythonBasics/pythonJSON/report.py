@@ -2,13 +2,14 @@ import json
 
 
 def report():
-    global open_tickets, in_progress_ticket, closed_tickets
+    # global open_tickets, in_progress_ticket, closed_tickets
     open_tickets = 0
     in_progress_ticket = 0
     closed_tickets = 0
 
     low_priority = 0
     medium_priority = 0
+    high_priority = 0
     critical_priority = 0
 
 
@@ -30,6 +31,8 @@ def report():
                 low_priority +=1
             if ticketDetails["priority"] == "medium":
                 medium_priority +=1
+            if ticketDetails["priority"] == "high":
+                high_priority +=1
             if ticketDetails["priority"] == "critical":
                 critical_priority +=1
     print("=====================================")
@@ -46,6 +49,7 @@ def report():
     print("=====================================")
     print(f"Total Low priority: {low_priority}")
     print(f"Total Medium priority: {medium_priority}")
+    print(f"Total High priority: {high_priority}")
     print(f"Total Critical Priority: {critical_priority}")
     print("=====================================")
         
