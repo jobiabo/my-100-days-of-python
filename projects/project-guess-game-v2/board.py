@@ -1,13 +1,23 @@
+from userinput_validate import validate
 def guess(my_guess, cpu_guess):
     count = 1
 
     
 
     while my_guess != cpu_guess and count <= 5:
+        print("Please enter a valid integer or you failed")
         
-        my_guess = int(my_guess)
+        my_guess = int(my_guess)        
+
         if count > 1:
-            my_guess = int(input("Enter your guess here: "))
+            my_guess = (input("Enter your guess here: "))
+            if not validate(my_guess):
+                break
+            else:
+                my_guess = int(my_guess)
+
+            
+
         # trial 1
         if my_guess > cpu_guess and count == 1:
             
@@ -75,6 +85,7 @@ def guess(my_guess, cpu_guess):
             print(f"yay you got the number {cpu_guess}")
             print("You Won!")
             break
+        
         count = count+1    
         
 
