@@ -7,6 +7,6 @@ def inrangenumber(rangednumber):
         if validate(rangednumber):
             return rangednumber
         else:
-            print("please enter a valid integer from 0 upward")
+            print("please enter a valid integer from 5 upward")
             return None
     i=i+1
