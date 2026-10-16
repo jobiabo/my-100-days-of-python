@@ -34,11 +34,10 @@ def view_all_tasks():
     databank = load_databank()
     print(databank)
 
-    print("="*55)
-    print("   ID    TITLE    CREATED_AT    STATUS    MODIFIED_AT")
-    print("-"*55)
-    print(f"   {databank["ID"]}    {databank["TITLE"]}    {databank["CREATED_AT"]}    {databank["STATUS"]}")
-    print("="*55)
+    print(type(databank))
+
+    for x in databank:
+        print(x)
 
 
 
