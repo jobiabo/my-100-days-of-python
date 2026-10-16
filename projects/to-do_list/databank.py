@@ -14,3 +14,9 @@ def load_databank():
         except json.JSONDecodeError:
             # 2. Fallback if the file contains invalid JSON text
             return {}  # Or []
+
+import json
+
+def save_databank(databank):
+    with open("taskstore.json", "w") as file:
+        json.dump(databank, file, indent=4)
