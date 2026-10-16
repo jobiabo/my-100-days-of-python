@@ -42,7 +42,8 @@ def view_all_tasks():
         f"{'COMPLETED_AT':<20}"
     )
     print("=" * 100)
-
+    if not load_databank():
+        print("no task created yet")
     for x in databank:
         print(
             f"{x['ID']:<15}"
