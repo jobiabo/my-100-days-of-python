@@ -32,12 +32,27 @@ def create_task(title):
 
 def view_all_tasks():
     databank = load_databank()
-    print(databank)
 
-    print(type(databank))
+    print("=" * 100)
+    print(
+        f"{'TICKET_ID':<15}"
+        f"{'TITLE':<25}"
+        f"{'CREATED_AT':<22}"
+        f"{'STATUS':<15}"
+        f"{'COMPLETED_AT':<20}"
+    )
+    print("=" * 100)
 
     for x in databank:
-        print(x)
+        print(
+            f"{x['ID']:<15}"
+            f"{x['TITLE']:<25}"
+            f"{x['CREATED_AT']:<22}"
+            f"{x['STATUS']:<15}"
+            f"{x['COMPLETED_AT'] or 'N/A':<20}"
+        )
+
+    print("=" * 100)
 
 
 
