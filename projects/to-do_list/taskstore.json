@@ -1,16 +1,9 @@
 [
     {
         "ID": "T001",
-        "TITLE": "code with python",
-        "CREATED_AT": "2026-10-16 16:10:16",
-        "STATUS": "completed",
-        "COMPLETED_AT": "2026-10-17 00:15:07"
-    },
-    {
-        "ID": "T002",
-        "TITLE": "learn python dictionaries",
-        "CREATED_AT": "2026-10-16 16:10:16",
-        "STATUS": "just created",
-        "COMPLETED_AT": ""
+        "TITLE": "play python",
+        "CREATED_AT": "2026-10-17 23:58:16",
+        "STATUS": "incompleted",
+        "COMPLETED_AT": "2026-10-18 00:06:16"
     }
 ]

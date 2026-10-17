@@ -1,14 +1,15 @@
 import json
 import os
+from config import FILEPATH
 
 def load_databank():
-    file_path = "taskstore.json"  # Replace with your actual file path
+    #  actual file path
     
     # 1. Check if file doesn't exist or is completely empty
-    if not os.path.exists(file_path) or os.path.getsize(file_path) == 0:
+    if not os.path.exists(FILEPATH) or os.path.getsize(FILEPATH) == 0:
         return {}  # Or [] depending on your structure
 
-    with open(file_path, "r") as file:
+    with open(FILEPATH, "r") as file:
         try:
             return json.load(file)
         except json.JSONDecodeError:
@@ -18,5 +19,5 @@ def load_databank():
 import json
 
 def save_databank(databank):
-    with open("taskstore.json", "w") as file:
+    with open(FILEPATH, "w") as file:
         json.dump(databank, file, indent=4)

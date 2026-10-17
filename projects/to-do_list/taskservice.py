@@ -1,6 +1,8 @@
 from databank import load_databank
 from clock import time_stamp
 import json
+from config import FILEPATH
+
 
 def create_id():
     
@@ -18,16 +20,17 @@ def create_id():
 
 def create_task(title):
     from config import CONTENTS
-    taskdata = CONTENTS.copy()
+    new_task = CONTENTS.copy()
+    databank = load_databank()
 
-    taskdata["ID"] = create_id()
-    taskdata["TITLE"] = title
-    taskdata["CREATED_AT"] = time_stamp()
-    taskdata["STATUS"] = "just created"
+    new_task["ID"] = create_id()
+    new_task["TITLE"] = title
+    new_task["CREATED_AT"] = time_stamp()
+    new_task["STATUS"] = "just created"
     
-
-    with open("taskstore.json", "w") as file:
-        json.dump(taskdata, file, indent=4)
+    databank.append(new_task)
+    with open(FILEPATH, "w") as file:
+        json.dump(databank, file, indent=4)
     print("Tasks created successfully")
 
 def view_all_tasks():

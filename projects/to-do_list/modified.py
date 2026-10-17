@@ -5,6 +5,7 @@ from clock import time_stamp
 def mark_complete():
     current_id = input("Enter task ID to mark as complete: ").upper()
     data_bank = load_databank()
+
     for x in data_bank:
         if current_id == x["ID"]:
             x["STATUS"] = "completed" 
@@ -16,15 +17,18 @@ def mark_complete():
             f"{x['STATUS']:<15}"
             f"{x['COMPLETED_AT'] or 'N/A':<20}"
         )
+            
             from databank import save_databank
-            save_databank(data_bank)        
+            save_databank(data_bank)
+            print(f" Ticket ID {x["ID"]} has been marked {x["STATUS"]} successfully")        
             return
     else:
         print("Task ID mismatch")
 
 def mark_incomplete():
-    current_id = input("Enter task ID to mark as complete: ")
+    current_id = input("Enter task ID to mark as complete: ").upper()
     data_bank = load_databank()
+
     for x in data_bank:
         if current_id == x["ID"]:
             x["STATUS"] = "incompleted" 
@@ -36,9 +40,10 @@ def mark_incomplete():
             f"{x['STATUS']:<15}"
             f"{x['COMPLETED_AT'] or 'N/A':<20}"
         )
+            
             from databank import save_databank
             save_databank(data_bank)
-
+            print(f" Ticket ID {x["ID"]} has been marked {x["STATUS"]} successfully") 
             return
     else:
         print("Task ID mismatch: no task found with that ID.")
