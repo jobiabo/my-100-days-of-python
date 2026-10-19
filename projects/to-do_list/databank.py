@@ -16,7 +16,6 @@ def load_databank():
             # 2. Fallback if the file contains invalid JSON text
             return {}  # Or []
 
-import json
 
 def save_databank(databank):
     with open(FILEPATH, "w") as file:

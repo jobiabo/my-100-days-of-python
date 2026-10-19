@@ -38,7 +38,7 @@ def view_all_tasks():
 
     print("=" * 100)
     print(
-        f"{'TICKET_ID':<15}"
+        f"{'TASK_ID':<15}"
         f"{'TITLE':<25}"
         f"{'CREATED_AT':<22}"
         f"{'STATUS':<15}"

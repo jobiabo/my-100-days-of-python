@@ -8,20 +8,23 @@ def mark_complete():
 
     for x in data_bank:
         if current_id == x["ID"]:
-            x["STATUS"] = "completed" 
-            x['COMPLETED_AT'] = time_stamp()
-            print(
-            f"{x['ID']:<15}"
-            f"{x['TITLE']:<25}"
-            f"{x['CREATED_AT']:<22}"
-            f"{x['STATUS']:<15}"
-            f"{x['COMPLETED_AT'] or 'N/A':<20}"
+            if x["STATUS"] == "incomplete" or x["STATUS"] == "just created":
+                x["STATUS"] = "completed" 
+                x['COMPLETED_AT'] = time_stamp()
+                print(
+                f"{x['ID']:<15}"
+                f"{x['TITLE']:<25}"
+                f"{x['CREATED_AT']:<22}"
+                f"{x['STATUS']:<15}"
+                f"{x['COMPLETED_AT'] or 'N/A':<20}"
         )
             
-            from databank import save_databank
-            save_databank(data_bank)
-            print(f" Ticket ID {x["ID"]} has been marked {x["STATUS"]} successfully")        
-            return
+                from databank import save_databank
+                save_databank(data_bank)
+                print(f" Ticket ID {x["ID"]} has been marked {x["STATUS"]} successfully")        
+                return
+            else:
+                print(f"Task already completed as at {x["COMPLETED_AT"]}")
     else:
         print("Task ID mismatch")
 
