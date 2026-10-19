@@ -1,0 +1,31 @@
+{
+  "schema_version": 2,
+  "tickets": [
+    {
+      "id": "T001",
+      "title": "wifi down",
+      "category": "Network",
+      "urgency": "low",
+      "affected_users": 5,
+      "priority": "medium",
+      "status": "open",
+      "assigned_to": null,
+      "created_at": "2026-10-19T14:27:16.775550+00:00",
+      "updated_at": "2026-10-19T14:27:16.775550+00:00",
+      "due_at": "2026-10-20T14:27:16.775550+00:00",
+      "escalation_cycle": 0
+    }
+  ],
+  "events": [
+    {
+      "event_id": "E001",
+      "ticket_id": "T001",
+      "event_type": "CREATE",
+      "actor": "mentor A",
+      "timestamp": "2026-10-19T14:27:16.775550+00:00",
+      "before_status": null,
+      "after_status": "open",
+      "details": "Created with priority medium"
+    }
+  ]
+}
