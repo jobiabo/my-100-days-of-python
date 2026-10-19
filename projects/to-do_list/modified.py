@@ -7,8 +7,8 @@ def mark_complete():
     data_bank = load_databank()
 
     for x in data_bank:
-        if current_id == x["ID"]:
-            if x["STATUS"] == "incomplete" or x["STATUS"] == "just created":
+        if current_id == x['ID']:
+            if x['STATUS'] == "just created" or x['STATUS'] == "incompleted":
                 x["STATUS"] = "completed" 
                 x['COMPLETED_AT'] = time_stamp()
                 print(
@@ -17,14 +17,15 @@ def mark_complete():
                 f"{x['CREATED_AT']:<22}"
                 f"{x['STATUS']:<15}"
                 f"{x['COMPLETED_AT'] or 'N/A':<20}"
-        )
+            )
             
                 from databank import save_databank
                 save_databank(data_bank)
                 print(f" Ticket ID {x["ID"]} has been marked {x["STATUS"]} successfully")        
                 return
-            else:
+            elif x['STATUS'] == "completed":
                 print(f"Task already completed as at {x["COMPLETED_AT"]}")
+                return
     else:
         print("Task ID mismatch")
 
@@ -33,21 +34,23 @@ def mark_incomplete():
     data_bank = load_databank()
 
     for x in data_bank:
-        if current_id == x["ID"]:
-            x["STATUS"] = "incompleted" 
-            x['COMPLETED_AT'] = time_stamp()
-            print(
-            f"{x['ID']:<15}"
-            f"{x['TITLE']:<25}"
-            f"{x['CREATED_AT']:<22}"
-            f"{x['STATUS']:<15}"
-            f"{x['COMPLETED_AT'] or 'N/A':<20}"
-        )
-            
-            from databank import save_databank
-            save_databank(data_bank)
-            print(f" Ticket ID {x["ID"]} has been marked {x["STATUS"]} successfully") 
-            return
+            if current_id == x['ID']:
+                if x['STATUS'] == "incompleted":
+                    print(f"TASK {x['ID']} is still active as incomplete as at {x['CREATED_AT']}")
+                    return
+                elif x['STATUS'] == "just created" or x['STATUS'] == "completed":
+                    x['STATUS'] = "incompleted"
+                    print(
+                    f"{x['ID']:<15}"
+                    f"{x['TITLE']:<25}"
+                    f"{x['CREATED_AT']:<22}"
+                    f"{x['STATUS']:<15}"
+                    f"{x['COMPLETED_AT'] or 'N/A':<20}"
+                    
+                    ) 
+                    from databank import save_databank
+                    save_databank(data_bank)
+                    print(f" Ticket ID {x["ID"]} has been marked {x["STATUS"]} successfully")        
+                    return
     else:
-        print("Task ID mismatch: no task found with that ID.")
-
+        print("Task ID mismatch")
