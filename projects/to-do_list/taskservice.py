@@ -19,8 +19,12 @@ def create_id():
 def is_duplicate(title):
     title = title.strip()
     databank = load_databank()
+
     for task in databank:
-        if task["TITLE"] == title:
+        if task["TITLE"] == title and task["STATUS"] in (
+            "just created",
+            "incompleted",
+        ):
             return True
     return False
 
@@ -84,6 +88,83 @@ def view_all_tasks():
         )
 
     print("=" * 100)
+
+def show_completed():
+    databank = load_databank()
+
+    # Filter completed tasks
+    completed_tasks = [
+        task for task in databank
+        if task["STATUS"] == "completed"
+    ]
+
+    if not completed_tasks:
+        print("No completed tasks found.")
+        return
+
+    # Print headings once
+    print("=" * 100)
+    print(
+        f"{'TASK_ID':<15}"
+        f"{'TITLE':<25}"
+        f"{'CREATED_AT':<22}"
+        f"{'STATUS':<15}"
+        f"{'COMPLETED_AT':<20}"
+    )
+    print("=" * 100)
+
+    # Display completed tasks
+    for task in completed_tasks:
+        print(
+            f"{task['ID']:<15}"
+            f"{task['TITLE']:<25}"
+            f"{task['CREATED_AT']:<22}"
+            f"{task['STATUS']:<15}"
+            f"{task.get('COMPLETED_AT', 'N/A'):<20}"
+        )
+
+    print("=" * 100)
+
+
+def show_incompleted():
+    databank = load_databank()
+
+    # Filter tasks by status
+    incomplete_tasks = [
+        task for task in databank
+        if task["STATUS"] in ("incompleted", "just created")
+    ]
+
+    # Handle the case where no matching tasks exist
+    if not incomplete_tasks:
+        print("No incomplete or newly created tasks found.")
+        return
+
+    # Print headings once
+    print("=" * 100)
+    print(
+        f"{'TASK_ID':<15}"
+        f"{'TITLE':<25}"
+        f"{'CREATED_AT':<22}"
+        f"{'STATUS':<15}"
+        f"{'COMPLETED_AT':<20}"
+    )
+    print("=" * 100)
+
+    # Print each matching task
+    for task in incomplete_tasks:
+        print(
+            f"{task['ID']:<15}"
+            f"{task['TITLE']:<25}"
+            f"{task['CREATED_AT']:<22}"
+            f"{task['STATUS']:<15}"
+            f"{task.get('COMPLETED_AT', 'N/A'):<20}"
+        )
+
+    print("=" * 100)
+
+            
+    
 
 
 

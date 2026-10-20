@@ -1,5 +1,4 @@
-from taskservice import create_task
-from taskservice import view_all_tasks
+from taskservice import create_task,view_all_tasks, show_incompleted, show_completed
 from modified import mark_complete
 from modified import mark_incomplete
 from config import heading
@@ -25,8 +24,13 @@ def main():
                 else:
                     create_task(title)
             elif choice == "3":
-                mark_complete()
+                show_incompleted()
             elif choice == "4":
+                show_completed()
+            
+            elif choice == "5":
+                mark_complete()
+            elif choice == "6":
                 mark_incomplete()
             elif choice == "0":
                 print("GOODBYE")
