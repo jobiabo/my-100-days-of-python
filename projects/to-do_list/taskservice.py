@@ -16,22 +16,49 @@ def create_id():
         lastid = int(lastitem["ID"][1:])
         return f"T{lastid+1:03d}"
 
-
+def is_duplicate(title):
+    title = title.strip()
+    databank = load_databank()
+    for task in databank:
+        if task["TITLE"] == title:
+            return True
+    return False
 
 def create_task(title):
     from config import CONTENTS
     new_task = CONTENTS.copy()
     databank = load_databank()
 
-    new_task["ID"] = create_id()
-    new_task["TITLE"] = title
-    new_task["CREATED_AT"] = time_stamp()
-    new_task["STATUS"] = "just created"
-    
-    databank.append(new_task)
-    with open(FILEPATH, "w") as file:
-        json.dump(databank, file, indent=4)
-    print("Tasks created successfully")
+    if is_duplicate(title):
+        print(  f"Task match found in with same title {title}" 
+                f"Print would you love to continue creating a new task with {title}"
+            )
+        userchoice = input("yes or no: ").lower()
+        if userchoice == "yes":
+            new_task["ID"] = create_id()
+            new_task["TITLE"] = title
+            new_task["CREATED_AT"] = time_stamp()
+            new_task["STATUS"] = "just created"
+            
+            databank.append(new_task)
+            with open(FILEPATH, "w") as file:
+                json.dump(databank, file, indent=4)
+            print("Tasks created successfully")
+        else:
+            return None
+    if not is_duplicate:
+        new_task["ID"] = create_id()
+        new_task["TITLE"] = title
+        new_task["CREATED_AT"] = time_stamp()
+        new_task["STATUS"] = "just created"
+        
+        databank.append(new_task)
+        with open(FILEPATH, "w") as file:
+            json.dump(databank, file, indent=4)
+        print("Tasks created successfully")
+
+
+
 
 def view_all_tasks():
     databank = load_databank()
