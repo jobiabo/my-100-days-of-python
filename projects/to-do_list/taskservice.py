@@ -30,8 +30,8 @@ def create_task(title):
     databank = load_databank()
 
     if is_duplicate(title):
-        print(  f"Task match found in with same title {title}" 
-                f"Print would you love to continue creating a new task with {title}"
+        print(  f"Task match found with same title {title}\n" 
+                f"would you love to continue creating a new task with {title}"
             )
         userchoice = input("yes or no: ").lower()
         if userchoice == "yes":
@@ -46,7 +46,7 @@ def create_task(title):
             print("Tasks created successfully")
         else:
             return None
-    if not is_duplicate:
+    if not is_duplicate(title):
         new_task["ID"] = create_id()
         new_task["TITLE"] = title
         new_task["CREATED_AT"] = time_stamp()
