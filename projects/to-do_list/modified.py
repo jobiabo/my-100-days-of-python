@@ -40,6 +40,8 @@ def mark_incomplete():
                     return
                 elif x['STATUS'] == "just created" or x['STATUS'] == "completed":
                     x['STATUS'] = "incompleted"
+                    x['CREATED_AT'] = time_stamp()
+                    x['COMPLETED_AT'] = ""
                     print(
                     f"{x['ID']:<15}"
                     f"{x['TITLE']:<25}"
