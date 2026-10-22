@@ -1,4 +1,4 @@
-from databank import load_databank
+from databank import load_databank, save_databank
 from clock import time_stamp
 import json
 from config import FILEPATH
@@ -45,9 +45,9 @@ def create_task(title):
             new_task["STATUS"] = "just created"
             
             databank.append(new_task)
-            with open(FILEPATH, "w") as file:
-                json.dump(databank, file, indent=4)
-            print("Tasks created successfully")
+            save_databank(databank)
+            print("Task created successfully")
+
         else:
             return None
     if not is_duplicate(title):
@@ -57,9 +57,8 @@ def create_task(title):
         new_task["STATUS"] = "just created"
         
         databank.append(new_task)
-        with open(FILEPATH, "w") as file:
-            json.dump(databank, file, indent=4)
-        print("Tasks created successfully")
+        save_databank(databank)
+        print("Task created successfully")
 
 
 

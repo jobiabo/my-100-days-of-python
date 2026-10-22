@@ -7,14 +7,14 @@ def load_databank():
     
     # 1. Check if file doesn't exist or is completely empty
     if not os.path.exists(FILEPATH) or os.path.getsize(FILEPATH) == 0:
-        return {}  # Or [] depending on your structure
+        return []
 
     with open(FILEPATH, "r") as file:
         try:
             return json.load(file)
         except json.JSONDecodeError:
             # 2. Fallback if the file contains invalid JSON text
-            return {}  # Or []
+            return []
 
 
 def save_databank(databank):

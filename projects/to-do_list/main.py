@@ -18,8 +18,10 @@ def main():
                 title = input("Enter Task title: ")
                 if title == "":
                     print("Title cannot be empty")
-                    title = input("Enter Task title")
-                    create_task(title)
+                    main()
+                    
+                    # title = input("Enter Task title")
+                    # create_task(title)
 
                 else:
                     create_task(title)
