@@ -15,21 +15,15 @@ def main():
             if choice == "1":
                 view_all_tasks()
             elif choice == "2":
-                title = input("Enter Task title: ")
-                if title == "":
+                title = input("Enter Task title: ").strip()
+                if not title:
                     print("Title cannot be empty")
-                    main()
-                    
-                    # title = input("Enter Task title")
-                    # create_task(title)
-
-                else:
-                    create_task(title)
+                    continue
+                create_task(title)
             elif choice == "3":
                 show_incompleted()
             elif choice == "4":
                 show_completed()
-            
             elif choice == "5":
                 mark_complete()
             elif choice == "6":

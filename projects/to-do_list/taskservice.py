@@ -21,7 +21,9 @@ def is_duplicate(title):
     databank = load_databank()
 
     for task in databank:
-        if task["TITLE"] == title and task["STATUS"] in (
+        title = title.lower()
+        checkStitle = task['TITLE'].lower()
+        if checkStitle == title and task["STATUS"] in (
             "just created",
             "incompleted",
         ):
