@@ -1,10 +1,26 @@
+# def check_extreme(num):
+#     smallest = min(num)
+#     highest = max(num)
+
+#     print(smallest)
+#     print(highest)
+
+# nums = [45, 2, 89, 12, 7]
+# check_extreme(nums)
+# print()
+
+
+# Optimised
+
 def check_extreme(num):
     smallest = min(num)
     highest = max(num)
 
-    print(smallest)
-    print(highest)
+    return smallest, highest
 
 nums = [45, 2, 89, 12, 7]
-check_extreme(nums)
-print()
+
+smallest, highest = check_extreme(nums)
+
+print("Smallest:", smallest)
+print("Highest:", highest)
