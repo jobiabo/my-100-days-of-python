@@ -1,6 +1,6 @@
 def cart(select):
     select.append("mango")
-    select.pop(select[1])
+    select.remove(select[1])
     print(select)
 
 
