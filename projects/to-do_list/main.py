@@ -1,6 +1,5 @@
 from taskservice import create_task,view_all_tasks, show_incompleted, show_completed
-from modified import mark_complete
-from modified import mark_incomplete
+from modified import mark_complete, mark_incomplete
 from config import heading
 import sys
 
