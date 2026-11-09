@@ -1,11 +1,13 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def home():
-    print("I came first")
-    return "<h1>I come second</h1>"
+    if request.method == "GET":
+        return "<h1>This is a GET request"
+    elif request.method == "POST":
+        return "<h1>This is a POST request"
 
 @app.route("/about")
 def about():
