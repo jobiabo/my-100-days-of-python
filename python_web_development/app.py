@@ -17,5 +17,12 @@ def about():
 def mypeace():
     return "<h1>Jehovah My Decorator</h1>"
 
+# Identifying Query Parameters
+@app.route("/hello")
+def hello():
+    name = request.args.get("name")
+    age = request.args.get("age")
+    return f"<h1>Hello {name}!\n he is {age} years of age</h1>"
+
 if __name__ == "__main__":
     app.run(debug=True)
