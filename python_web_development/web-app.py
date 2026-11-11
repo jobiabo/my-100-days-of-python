@@ -12,12 +12,12 @@ def register():
         email = request.form.get("email")
         country = request.form.get("country")
 
-        return f"""
-            <h1>Registration Successful!</h1>
-            <p>Name: {fullname}</p>
-            <p>Email: {email}</p>
-            <p>Country: {country}</p>
-        """
+        return render_template(
+            "result.html",
+            fullname=fullname,
+            email=email,
+            country=country,
+        )
 
 if __name__ == "__main__":
     app.run(debug=True)
