@@ -1,4 +1,4 @@
-addd = "5"
-floatu = "10"
+addd = "4"
+floatu = "150.50"
 
-print(int(addd)+float(floatu))
+print(int(addd)*float(floatu))
