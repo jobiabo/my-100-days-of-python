@@ -3,11 +3,11 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 @app.route("/temperature", methods=["GET", "POST"])
-def age():
+def temperature():
 
     if request.method == "POST":
 
-        temp_value = request.form.get("celcius")
+        temp_value = request.form.get("celsius")
         if not temp_value:
             return "temperature value must not be empty"
 
